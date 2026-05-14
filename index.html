@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Интерактивное тестирование</title>
+        <script src="js/script.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body onload="initTest()">
+
+        <div class="header">
+            <h3>Лабораторная работа №4</h3>
+            <p>Выполнил: Трубников И.В | Группа 25ВП2 | Вариант 22</h3></p>
+            <h2>Тема: «Русский язык». Грамматика и орфография</h2>
+        </div>
+
+        <div id="timerBlock">
+            Осталось времени: <span id="timeDisplay">2:00</span>
+        </div>
+
+        <form id="testForm">
+            <!-- Textbox -->
+            <div class ="question">
+                <p><b>1. Напишите проверочное слово к слову "б..жать": </b></p>
+                <input type="text" id="q1" placeholder="Ваш ответ...">
+            </div>
+
+            <div class="question">
+                <p><b>2. Какая буква пишется в приставке слова "(з/с)делать"?</b></p>
+                <input type="text" id="q2" placeholder="Одна буква...">
+            </div>
+
+            <!-- Radio button -->
+            <div class = "question">
+                <p><b>3. На какой слог падает ударение в слове "звонит"?</b></p>
+                <input type="radio" name="q3" value="1"> На первый<br>
+                <input type="radio" name="q3" value="2"> На второй<br>
+            </div>
+
+            <div class = "question">
+                <p><b>4. В каком слове пишется буква "О"?</b></p>
+                <input type="radio" name="q4" value="1"> Ш..пот<br>
+                <input type="radio" name="q4" value="2"> Ш..в<br>
+                <input type="radio" name="q4" value="3"> Ж..лудь<br>
+            </div>
+
+            <!-- Checkbox -->
+            <div class = "question">
+                <p><b>5. Выберите слова-исключения, в которых пишется "НН":</b></p>
+                <input type="checkbox" id="q5_1"> Стеклянный<br>
+                <input type="checkbox" id="q5_2"> Ветреный<br>
+                <input type="checkbox" id="q5_3"> Оловянный<br>
+                <input type="checkbox" id="q5_4"> Серебряный<br>
+            </div>
+
+            <div class = "question">
+                <p><b>6. Выберите глаголы-исключения II спряжения:</b></p>
+                <input type="checkbox" id="q6_1"> Брить<br>
+                <input type="checkbox" id="q6_2"> Видеть<br>
+                <input type="checkbox" id="q6_3"> Стелить<br>
+                <input type="checkbox" id="q6_4"> Дышать<br>
+            </div>
+
+            <!-- Combobox -->
+            <div class="question">
+                <p><b>7. Какого рода слово "кофе" (литературная норма)?</b></p>
+                    <select id="q7">
+                    <option value="0">Выберите вариант...</option>
+                    <option value="1">Мужской род</option>
+                    <option value="2">Средний род</option>
+                    <option value="3">Женский род</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <p><b>8. Выберите правильное окончание: "Он бор..тся"</b></p>
+                <select id="q8">
+                    <option value="0">Выберите вариант...</option>
+                    <option value="1">-ются</option>
+                    <option value="2">-ется</option>
+                    <option value="3">-ится</option>
+                </select>
+            </div>
+
+            <br>
+            <input type="button" id="finishBtn" value="Завершить тест" onclick="finishTest()">
+
+        </form>
+        <hr>
+
+        <div id="resultsBlock" style="display: none;">
+            <h3>ИТОГО БАЛЛОВ: <span id="totalScore">0</span> из 8</h3>
+            <table id="resultTable" border="1" width="100%">
+                <tr>
+                    <th>№</th>
+                    <th>Вопрос</th>
+                    <th>Ваш ответ</th>
+                    <th>Правильный ответ</th>
+                    <th>Баллы</th>
+                </tr>
+            </table>
+        </div>
+        
+    </body>
+</html>
